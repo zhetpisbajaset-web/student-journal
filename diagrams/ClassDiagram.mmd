@@ -1,0 +1,11 @@
+classDiagram
+ class Person {<<abstract>> -string __full_name +full_name +role()* }
+ class Student {+group_name +student_number +role()}
+ class Teacher {+subject +role()}
+ class Grade {<<abstract>> -int __value +value +grade_type()*}
+ class ExamGrade {+grade_type()}
+ class ControlGrade {+grade_type()}
+ Person <|-- Student
+ Person <|-- Teacher
+ Grade <|-- ExamGrade
+ Grade <|-- ControlGrade
